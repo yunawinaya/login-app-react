@@ -23,10 +23,9 @@ export default function Login() {
       <h1 className="my-3">Login to your account</h1>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label htmlFor="inputEmail">Email address</Form.Label>
+          <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            id="inputEmail"
             placeholder="Enter email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -37,10 +36,9 @@ export default function Login() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label htmlFor="inputPassword">Password</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            id="inputPassword"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />

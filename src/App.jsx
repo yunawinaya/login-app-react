@@ -4,11 +4,13 @@ import useLocalStorage from "use-local-storage";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 import { AuthContext } from "./AuthContext";
 import RequireAuth from "./components/RequireAuth";
 
 export default function App() {
-  const [token, setToken] = useLocalStorage("token", "");
+  const [token, setToken] = useLocalStorage("token", null);
+
   return (
     <AuthContext.Provider value={{ token, setToken }}>
       <BrowserRouter>
@@ -22,6 +24,14 @@ export default function App() {
               </RequireAuth>
             }
             path="/dashboard"
+          />
+          <Route
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+            path="/profile"
           />
         </Routes>
       </BrowserRouter>
